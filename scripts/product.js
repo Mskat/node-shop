@@ -1,7 +1,7 @@
 class Product {
 	constructor(intId, strName, strImageUrl, intPrice, strDescription) {
 		this._intId = intId;
-		this._strTitle = strName;
+		this._strName = strName;
 		this._strImageUrl = strImageUrl;
 		this._intPrice = intPrice;
 		this._strDescription = strDescription;
@@ -19,17 +19,17 @@ class Product {
 		return this._strImageUrl;  
 	}
 
-	getDescription() {
-		return this._strDescription;  
-	}
-
 	getPrice() {
 		return this._intPrice;  
 	}
 
+	getDescription() {
+		return this._strDescription;  
+	}
+
 	toString() {
 		console.log(
-			'Product ID: ' + this.getId() + '\nName: ' + this.getName() +  '\nLink: ' + this.getImageUrl() + '\nDescription: ' + this.getDescription() + '\nPrice: ' + this.getPrice()
+			'Product ID: ' + this.getId() + '\nName: ' + this.getName() +  '\nLink: ' + this.getImageUrl() + '\nPrice: £' + this.getPrice() + '\nDescription: ' + this.getDescription()
 		);
 	}
 }
