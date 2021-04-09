@@ -45,7 +45,7 @@ function chooseProduct() {
 
 		if (strName.includes(strInput)) { // checks if any result fits to given keywords
 			console.log(products[i].toString());
-			mdlFilteredProductList.getFilteredProducts(products[i]);
+			mdlFilteredProductList.addProductToFilteredList(products[i]);
 			intCounter++;
 		}
 	}
