@@ -28,8 +28,8 @@ function greeting() {
 }
 
 function chooseProduct() {
-	console.log('\nOur products:');
-	mdlProductList.listAllProducts();
+	console.log('\nOur products:\n');
+	mdlProductList.listAllProducts(); // list all products in the shop
 
 	let strInput;
 	let intCounter = 0;
@@ -43,7 +43,7 @@ function chooseProduct() {
 			.getName()
 			.toLowerCase();
 
-		if (strName.includes(strInput)) {
+		if (strName.includes(strInput)) { // checks if any result fits to given keywords
 			console.log(products[i].toString());
 			mdlFilteredProductList.getFilteredProducts(products[i]);
 			intCounter++;
