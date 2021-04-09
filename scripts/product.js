@@ -28,9 +28,7 @@ class Product {
 	}
 
 	toString() {
-		console.log(
-			'Product ID: ' + this.getId() + '\nName: ' + this.getName() +  '\nLink: ' + this.getImageUrl() + '\nPrice: £' + this.getPrice() + '\nDescription: ' + this.getDescription()
-		);
+		return 'Product ID: ' + this.getId() + '\nName: ' + this.getName() +  '\nLink: ' + this.getImageUrl() + '\nPrice: £' + this.getPrice() + '\nDescription: ' + this.getDescription() + '\n';
 	}
 }
 
