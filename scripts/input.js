@@ -5,7 +5,7 @@ class Input {
 		let strInput = prompt('')
 			.trim()
 			.toLowerCase();
-            
+
 		return strInput;
 	}
 }
