@@ -18,7 +18,7 @@ class FilteredProductList {
 	}
 
 	addProductToFilteredList(objProduct) {
-		let arrItems = this.getFilteredProductList();
+		let arrItems = this.getFilteredProducts();
 		arrItems.push(objProduct);
 	}
 
