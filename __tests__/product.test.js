@@ -4,7 +4,6 @@ describe('product', function() {
 	describe('constructor', function() {
 		it('should create an instance', function() {
 			const intPrice = 523.56;
-
 			const mdlProduct = new classMdlProduct(
 				null,
 				null,
