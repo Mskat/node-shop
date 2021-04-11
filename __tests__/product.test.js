@@ -53,18 +53,18 @@ describe('product', function() {
 			const intId = 56;
 			const strName = 'Laptop';
 			const strImageUrl = 'https://someURL';
-			const intPrice = '456.6911';
-			const strExpectedPrice = parseFloat(intPrice).toFixed(2);
+			const strPrice = '456.6911';
+			const strExpectedPrice = parseFloat(strPrice).toFixed(2);
 			const strDescription = 'Some description about a Laptop';
 
 			const mdlProduct = new classMdlProduct(
 				intId,
 				strName,
 				strImageUrl,
-				intPrice,
+				strPrice,
 				strDescription
 			);
-			
+
 			expect(mdlProduct.getId()).toEqual(intId);
 			expect(mdlProduct.getName()).toEqual(strName);
 			expect(mdlProduct.getImageUrl()).toEqual(strImageUrl);
