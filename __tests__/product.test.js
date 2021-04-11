@@ -3,18 +3,13 @@ const classMdlProduct = require('../scripts/product.js');
 describe('product', function() {
 	describe('constructor', function() {
 		it('should create an instance', function() {
-			const intId = 56;
-			const strName = 'Laptop';
-			const strImageUrl = 'https://someURL';
 			const intPrice = 523.56;
-			const strDescription = 'Some description about a Laptop';
 
 			const mdlProduct = new classMdlProduct(
-				intId,
-				strName,
-				strImageUrl,
+				null,
+				null,
+				null,
 				intPrice,
-				strDescription
 			);
 			expect(mdlProduct).toBeInstanceOf(classMdlProduct);
 		});
