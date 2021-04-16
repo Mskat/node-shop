@@ -1,29 +1,18 @@
 // const classMdlProduct = require('./product.js');
+const classItem = require('./item.js');
 
-class FilteredProductList {
+class FilteredProductList extends classItem{
 	constructor() {
-		this._arrProducts = [];
-	}
-
-	getFilteredProducts() {
-		return this._arrProducts;
-	}
-
-	listAllFilteredProducts() {
-		const arrAllProducts = this.getFilteredProducts();
-		for (let i = 0; i < arrAllProducts.length; i++) {
-			const objProduct = arrAllProducts[i];
-			console.log(objProduct.toString());
-		}
+		super();
 	}
 
 	addProductToFilteredList(objProduct) {
-		let arrItems = this.getFilteredProducts();
+		let arrItems = this.getItems();
 		arrItems.push(objProduct);
 	}
 
 	getItem(intId) {
-		let arrItems = this.getFilteredProducts();
+		let arrItems = this.getItems();
 		for (let i = 0; i < arrItems.length; i++) {
 			const intProductId = arrItems[i].getId();
 			if (intId === intProductId) {
