@@ -1,11 +1,10 @@
-class ShoppingCart {
-	constructor() {
-		this._arrItems = [];
-		this._intTotalPrice = 0;
-	}
+const classItem = require('./item.js');
 
-	getItems() {
-		return this._arrItems;
+class ShoppingCart extends classItem{
+	constructor() {
+		super();
+
+		this._intTotalPrice = 0;
 	}
 
 	getTotalPrice() {
@@ -16,7 +15,7 @@ class ShoppingCart {
 		this._intTotalPrice = intPrice;
 	}
 
-	listItems() {
+	listItemsInShoppingCart() {
 		const arrItems = this.getItems();
 		console.log('\nYour shopping cart:');
 		for (let i = 0; i < arrItems.length; i++) {
