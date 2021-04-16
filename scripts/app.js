@@ -1,4 +1,4 @@
-const classInput = require('../scripts/input.js');
+const classMdlInput = require('../scripts/input.js');
 const classMdlProductList = require('../scripts/productList.js');
 const classShoppingCart = require('../scripts/shoppingCart.js');
 const classFilteredProductList = require('../scripts/filteredProductList.js');
@@ -11,7 +11,7 @@ function greeting() {
 	console.log('Hi there!');
 	console.log('Do you want to start shopping?');
 	console.log('\nType Y/N:');
-	const strUserInput = classInput._getInput().toUpperCase();
+	const strUserInput = classMdlInput._getInput().toUpperCase();
 	switch (strUserInput) {
 	case 'Y':
 		chooseProduct();
@@ -21,7 +21,7 @@ function greeting() {
 		break;
 	default:
 		console.log('Choose from avaliable options! Press ENTER to continue.');
-		classInput._getInput();
+		classMdlInput._getInput();
 		greeting();
 	}
 
@@ -35,7 +35,7 @@ function chooseProduct() {
 	let intCounter = 0;
 
 	console.log('Type the name of product:');
-	strInput = classInput._getInput();
+	strInput = classMdlInput._getInput();
 	const products = mdlProductList.getProducts();
 
 	for (let i = 0; i < products.length; i++) {
@@ -57,7 +57,7 @@ function chooseProduct() {
 	}
 
 	console.log('Choose an ID of product you want to add to shopping cart: ');
-	const strInput2 = classInput._getInput();
+	const strInput2 = classMdlInput._getInput();
 	const regPattern = /^[0-9]/;
 
 	if (strInput2.match(regPattern)) {
