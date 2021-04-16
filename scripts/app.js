@@ -2,6 +2,7 @@ const classMdlInput = require('../scripts/input.js');
 const classMdlProductList = require('../scripts/productList.js');
 const classShoppingCart = require('../scripts/shoppingCart.js');
 const classFilteredProductList = require('../scripts/filteredProductList.js');
+const classMdlData = require('../scripts/data.js');
 
 const mdlProductList = new classMdlProductList();
 const mdlShoppingCart = new classShoppingCart();
@@ -31,9 +32,16 @@ class App {
 		}
 	}
 
-	static chooseProduct() {
-		console.log('\nOur products:\n');
-		mdlProductList.listItems(); // list all products in the shop
+	static async chooseProduct() {
+		try {
+			const arrMdlItem = await classMdlData.importItemsFromList();
+			mdlProductList.setItems(arrMdlItem);
+
+			await console.log('\nOur products:\n');
+			mdlProductList.listItems(); // list all products in the shop
+		} catch (err) {
+			console.log(err);
+		}
 
 		let strInput = '';
 		let intCounter = 0;
