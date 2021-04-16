@@ -1,0 +1,4 @@
+{"id": 1, "name": "Pillow", "link": "https://zvelo.com/wp-content/tld-path-protocol.jpg", "price": 34.99, "description": "Some description about a Pillow."}
+{"id": 2, "name": "Matress", "link": "https://www.wikihow.com/images/he-URL-for-Step-2-6.jpg.webp", "price": 129.99, "description": "Some description about a Matress."}
+{"id": 3, "name": "Classic Pillow", "link": "https://some.com/wp-kmk/tld-path.jpg", "price": 64.99, "description": "Some description about a Classic Pillow."}
+{"id": 4, "name": "Bookcase", "link": "https://media.wired.com/photos/5lling%20the%20URL.jpg", "price": 229.00, "description": "Some description about a Bookcase."}
