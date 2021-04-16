@@ -1,18 +1,8 @@
-class ProductList {
+const classItem = require('./item.js');
+
+class ProductList extends classItem{
 	constructor() {
-	}
-
-	getProducts() {
-		return this._arrProducts;
-	}
-
-	listAllProducts() {
-		const arrAllProducts = this.getProducts();
-
-		for (let i = 0; i < arrAllProducts.length; i++) {
-			const objProduct = arrAllProducts[i];
-			console.log(objProduct.toString());
-		}
+		super();
 	}
 }
 
