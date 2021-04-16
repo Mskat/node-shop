@@ -29,19 +29,18 @@ class App {
 			classMdlInput._getInput();
 			App.greeting();
 		}
-
 	}
 
 	static chooseProduct() {
 		console.log('\nOur products:\n');
-		mdlProductList.listAllProducts(); // list all products in the shop
+		mdlProductList.listItems(); // list all products in the shop
 
-		let strInput;
+		let strInput = '';
 		let intCounter = 0;
 
 		console.log('Type the name of product:');
 		strInput = classMdlInput._getInput();
-		const products = mdlProductList.getProducts();
+		const products = mdlProductList.getItems();
 
 		for (let i = 0; i < products.length; i++) {
 			const strName = products[i]
