@@ -60,15 +60,21 @@ class App {
 			console.log(`We found ${intCounter} results.\n`);
 		}
 
-		console.log('Choose an ID of product you want to add to shopping cart: ');
-		const strInput2 = classMdlInput._getInput();
-		const regPattern = /^[0-9]/;
+		let objProduct;
+		do {
+			console.log('Type an ID of product you want to add to shopping cart: ');
 
-		if (strInput2.match(regPattern)) {
-			const objProduct = mdlFilteredProductList.getItem(parseInt(strInput2));
-			mdlShoppingCart.addItem(objProduct);
-			console.log('Added item to shopping cart.');
-		}
+			const strInput2 = classMdlInput._getInput();
+			objProduct = mdlFilteredProductList.getItem(parseInt(strInput2));
+
+			if (objProduct) {
+				mdlShoppingCart.addItem(objProduct);
+				console.log('Added item to shopping cart.');
+			} else {
+				console.log('There is no item with given ID. Press ENTER to continue.');
+				classMdlInput._getInput();
+			}
+		} while (objProduct === undefined);
 
 		mdlShoppingCart.listItems();
 	}
