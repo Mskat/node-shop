@@ -7,6 +7,10 @@ class Item {
 		return this._arrItems;
 	}
 
+	setItems(arrMdlItem) {
+		return this._arrItems = arrMdlItem;
+	}
+
 	listItems() {
 		const arrItems = this.getItems();
 		for (let i = 0; i < arrItems.length; i++) {
