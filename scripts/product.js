@@ -24,19 +24,19 @@ class Product {
 	}
 
 	getName() {
-		return this._strName;        
+		return this._strName;
 	}
 
 	getImageUrl() {
-		return this._strImageUrl;  
+		return this._strImageUrl;
 	}
 
 	getPrice() {
-		return this._mixPrice.toFixed(2);  
+		return this._mixPrice.toFixed(2);
 	}
 
 	getDescription() {
-		return this._strDescription;  
+		return this._strDescription;
 	}
 
 	toString() {
