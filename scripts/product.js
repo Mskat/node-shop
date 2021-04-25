@@ -12,7 +12,7 @@ class Product {
 				throw new Error('Price should be only numbers');
 			}
 		}
-		this._mixPrice = mixPrice;
+		this._mixPrice = mixPrice.toFixed(2);
 		this._intId = intId;
 		this._strName = strName;
 		this._strImageUrl = strImageUrl;
@@ -32,7 +32,7 @@ class Product {
 	}
 
 	getPrice() {
-		return this._mixPrice.toFixed(2);
+		return this._mixPrice;
 	}
 
 	getDescription() {
