@@ -1,7 +1,7 @@
 const prompt = require('prompt-sync')({ sigint: true });
 
 class Input {
-	static _getInput() {
+	static getInput() {
 		let strInput = prompt('-> ')
 			.trim()
 			.toLowerCase();
