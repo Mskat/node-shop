@@ -4,7 +4,7 @@ class ShoppingCart extends classItem{
 	constructor() {
 		super();
 
-		this._intTotalPrice = 0;
+		this._intTotalPrice = 0.00;
 	}
 
 	getTotalPrice() {
@@ -29,7 +29,7 @@ class ShoppingCart extends classItem{
 		arrItems.push(objProduct);
 
 		let intCurrentPrice = this.getTotalPrice();
-		intCurrentPrice += objProduct.getPrice();
+		intCurrentPrice += parseFloat(objProduct.getPrice());
 
 		this.setTotalPrice(intCurrentPrice);
 	}
