@@ -8,6 +8,8 @@ const mdlProductList = new classMdlProductList();
 const mdlShoppingCart = new classShoppingCart();
 const mdlFilteredProductList = new classFilteredProductList();
 
+const DEFAULT_MESSAGE = '\nThank you for your visit! See you soon!\n';
+
 class App {
 	static init() {
 		greetingMenu();
