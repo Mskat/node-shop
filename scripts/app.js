@@ -31,30 +31,25 @@ class App {
 			}
 		}
 
-		async chooseProduct() {
-			try {
-				const arrMdlItem = await classMdlData.importItemsFromList();
-				mdlProductList.setItems(arrMdlItem);
+		async function chooseProduct() {
+			//set product list
+			const arrMdlItem = await classMdlData.importItemsFromList();
+			mdlProductList.setItems(arrMdlItem);
 
-				await console.log('\nOur products:\n');
-				mdlProductList.listItems(); // list all products in the shop
-			} catch (err) {
-				console.log(err);
-			}
-
-			let strInput = '';
-			let intCounter = 0;
+			// list all products in the shop
+			console.log('\nOur products:\n');
+			mdlProductList.listItems();
 
 			console.log('Type the name of product:');
-			strInput = classMdlInput._getInput();
 			const products = mdlProductList.getItems();
-
+			const strInput = classMdlInput.getInput();
+			let intCounter = 0;
 			for (let i = 0; i < products.length; i++) {
 				const strName = products[i]
 					.getName()
 					.toLowerCase();
-
-				if (strName.includes(strInput)) { // checks if any result fits to given keywords
+				// checks if any result fits to given keywords
+				if (strName.includes(strInput)) {
 					console.log(products[i].toString());
 					mdlFilteredProductList.addProductToFilteredList(products[i]);
 					intCounter++;
@@ -63,27 +58,13 @@ class App {
 
 			if (intCounter > 0) {
 				console.log(`We found ${intCounter} result.\n`);
+				chooseProductID();
 			} else if (intCounter === 0){
-				console.log(`We found ${intCounter} results.\n`);
+				console.log(`\nWe found ${intCounter} results.\n`);
+				console.log('Do you want to try again?');
+				console.log('Type Y/N:');
+				showOptions(chooseProduct);
 			}
-
-			let objProduct;
-			do {
-				console.log('Type an ID of product you want to add to shopping cart: ');
-
-				const strInput2 = classMdlInput._getInput();
-				objProduct = mdlFilteredProductList.getItem(parseInt(strInput2));
-
-				if (objProduct) {
-					mdlShoppingCart.addItem(objProduct);
-					console.log('Added item to shopping cart.');
-				} else {
-					console.log('There is no item with given ID. Press ENTER to continue.');
-					classMdlInput._getInput();
-				}
-			} while (objProduct === undefined);
-
-			mdlShoppingCart.listItems();
 		}
 
 		function chooseProductID() {
