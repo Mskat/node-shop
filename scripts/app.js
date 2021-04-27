@@ -30,6 +30,29 @@ class App {
 				greeting();
 			}
 		}
+		
+		function showOptions(yesAction, noAction) {
+			const strUserInput = classMdlInput.getInput().toUpperCase();
+			switch (strUserInput) {
+			case 'Y':
+				if(yesAction && typeof yesAction === 'function') {
+					// await callbackFunction();
+					yesAction();
+				}
+				break;
+			case 'N':
+				if(noAction && typeof noAction === 'function') {
+					noAction();
+					break;
+				}
+				printMessage(DEFAULT_MESSAGE);
+				return;
+			default:
+				console.log('Choose from avaliable options! Press ENTER to continue.');
+				classMdlInput.getInput();
+				greetingMenu();
+			}
+		}
 
 		function printMessage(message) {
 			console.log(message);
