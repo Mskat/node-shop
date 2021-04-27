@@ -85,6 +85,26 @@ class App {
 
 			mdlShoppingCart.listItems();
 		}
+
+		function payForShopping() {
+			console.log('\nGo to checkout...');
+			setTimeout(function() {
+				mdlShoppingCart.listItemsInShoppingCart();
+				let strInput = '';
+				do {
+					console.log('\nChoose the payment method. Type card or cash:');
+					strInput = classMdlInput.getInput().toUpperCase();
+					if (strInput === 'CARD' || strInput === 'CASH') {
+						console.log(`\nYou paid £${mdlShoppingCart.getTotalPrice()}`);
+						console.log(DEFAULT_MESSAGE);
+						return;
+					} else {
+						console.log('Choose from avaliable options! Press ENTER to continue.');
+						classMdlInput.getInput();
+					}
+				} while (strInput !== 'CARD' || strInput !== 'CASH');
+			}, 3000);
+		}
 	}
 }
 
