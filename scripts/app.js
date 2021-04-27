@@ -86,12 +86,30 @@ class App {
 			mdlShoppingCart.listItems();
 		}
 
+		function chooseProductID() {
+			let objProduct;
+			do {
+				console.log('Type an ID of product you want to add to shopping cart: ');
+				const strInput2 = classMdlInput.getInput();
+				objProduct = mdlFilteredProductList.getItem(parseInt(strInput2));
+
+				if (objProduct) {
+					mdlShoppingCart.addItem(objProduct);
+					console.log('Added item to shopping cart.\n');
+				} else {
+					console.log('There is no item with given ID. Press ENTER to continue.');
+					classMdlInput.getInput();
+				}
+			} while (objProduct === undefined);
+			continueShoppingOrPay();
+		}
+
 		function continueShoppingOrPay() {
 			console.log('Do you want to continue shopping?');
 			console.log('Type Y/N:');
 			showOptions(chooseProduct, payForShopping);
 		}
-		
+
 		function payForShopping() {
 			console.log('\nGo to checkout...');
 			setTimeout(function() {
