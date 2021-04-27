@@ -10,7 +10,7 @@ const mdlFilteredProductList = new classFilteredProductList();
 
 class App {
 	static init() {
-		greeting();
+		greetingMenu();
 
 		function greetingMenu() {
 			console.log('Hi there!');
