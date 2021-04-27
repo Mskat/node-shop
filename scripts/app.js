@@ -86,6 +86,12 @@ class App {
 			mdlShoppingCart.listItems();
 		}
 
+		function continueShoppingOrPay() {
+			console.log('Do you want to continue shopping?');
+			console.log('Type Y/N:');
+			showOptions(chooseProduct, payForShopping);
+		}
+		
 		function payForShopping() {
 			console.log('\nGo to checkout...');
 			setTimeout(function() {
