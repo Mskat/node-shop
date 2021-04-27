@@ -31,6 +31,10 @@ class App {
 			}
 		}
 
+		function printMessage(message) {
+			console.log(message);
+		}
+
 		async function chooseProduct() {
 			//set product list
 			const arrMdlItem = await classMdlData.importItemsFromList();
