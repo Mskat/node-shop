@@ -12,25 +12,13 @@ class App {
 	static init() {
 		greeting();
 
-		greeting() {
+		function greetingMenu() {
 			console.log('Hi there!');
 			console.log('Do you want to start shopping?');
 			console.log('\nType Y/N:');
-			const strUserInput = classMdlInput._getInput().toUpperCase();
-			switch (strUserInput) {
-			case 'Y':
-				chooseProduct();
-				break;
-			case 'N':
-				console.log('\nThank you for your visit! See you soon!');
-				break;
-			default:
-				console.log('Choose from avaliable options! Press ENTER to continue.');
-				classMdlInput._getInput();
-				greeting();
-			}
+			showOptions(chooseProduct);
 		}
-		
+
 		function showOptions(yesAction, noAction) {
 			const strUserInput = classMdlInput.getInput().toUpperCase();
 			switch (strUserInput) {
